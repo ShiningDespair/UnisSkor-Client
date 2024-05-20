@@ -25,7 +25,7 @@ function UniversityPage() {
 
     const addRate = (event) => {
         event.preventDefault();
-        axios.post("http://localhost:3001/rates", {
+        axios.post("https://uniskor-api-acb533d7fd97.herokuapp.com/rates", {
             rate_amount: rating,
             com: rateComment,
             uni_id: id,
@@ -68,10 +68,10 @@ function UniversityPage() {
     const paginatedRates = rateList.slice(startIdx, endIdx);
 
     useEffect(() => {
-        axios.get(`http://localhost:3001/universities/byId/${id}`).then((response) => {
+        axios.get(`https://uniskor-api-acb533d7fd97.herokuapp.com/universities/byId/${id}`).then((response) => {
             setUniversity(response.data);
         });
-        axios.get(`http://localhost:3001/rates/${id}`).then((response) => {
+        axios.get(`https://uniskor-api-acb533d7fd97.herokuapp.com/rates/${id}`).then((response) => {
             setRates(response.data);
         });
     }, [id]);

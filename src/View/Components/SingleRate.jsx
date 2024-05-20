@@ -8,7 +8,7 @@ function SingleRate (props){
     const [likeCount, setLikeCount] = useState(1);
 
     useEffect(() => {
-            axios.get(`http://localhost:3001/rates/bystuId/${rate.stu_id}`)
+            axios.get(`https://uniskor-api-acb533d7fd97.herokuapp.com/rates/bystuId/${rate.stu_id}`)
                 .then(response => {
                      setStudentName(response.data.stu_name + " "+ response.data.stu_surname);
                     console.log("Student Name:", studentName);

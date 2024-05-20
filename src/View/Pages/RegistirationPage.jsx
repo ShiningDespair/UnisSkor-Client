@@ -17,7 +17,7 @@ function RegistirationPage() {
     const { setAuthState } = useContext(AuthContext);
 
     useEffect(() => {
-        axios.get("http://localhost:3001/universities")
+        axios.get("https://uniskor-api-acb533d7fd97.herokuapp.com/universities")
             .then(response => {
                 const universityOptions = response.data.map(university => ({
                     value: university.uni_id,
@@ -35,7 +35,7 @@ function RegistirationPage() {
             ...values,
             uni_id: values.selectedUniversity.value
         };
-        axios.post("http://localhost:3001/students", registerData)
+        axios.post("https://uniskor-api-acb533d7fd97.herokuapp.com/students", registerData)
             .then(() => {
                 setVerificationSent(true);
                 setTimeout(() => {
@@ -48,7 +48,7 @@ function RegistirationPage() {
     };
 
     const handleClickLogIn = (values) => {
-        axios.post("http://localhost:3001/students/login", values)
+        axios.post("https://uniskor-api-acb533d7fd97.herokuapp.com/students/login", values)
             .then((response) => {
                 if (!response.data.error) {
                     localStorage.setItem("accessToken", response.data.token);

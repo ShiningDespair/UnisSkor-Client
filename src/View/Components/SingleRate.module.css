@@ -1,0 +1,40 @@
+.RateBody{
+    border: 1px solid rgb(155, 171, 223);
+    padding: 30px;
+    display:grid;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.FirstRow{
+    display: flex;
+    flex-direction: row;
+}
+
+.LikeDislike{
+    margin-left: auto;
+    display: flex;
+    gap: 20px
+}
+
+
+.LikeDislike button{
+    max-height:50px;
+    max-width:50px;
+    background-color: #2C2E37;
+    color:#9BABDF;
+}
+
+.LikeDislike button:hover{
+    color: #FE6F61;
+
+}
+
+.LikeDislike button:checked{
+    color: #FE6F61;
+}
+
+
+.fa-thumbs-up, .fa-thumbs-down {
+    cursor: pointer;
+}
+

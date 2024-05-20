@@ -1,0 +1,175 @@
+@import url("https://unicons.iconscout.com/release/v2.1.9/css/unicons.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css");
+.blue{
+    background-color: blue;
+}
+
+.Layout{
+    display: grid;
+    grid-template-columns:  5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5%;
+    column-gap: 1.33%;
+    grid-template-rows: 100px 100px 150px 50px 100px 100px 100px 100px 100px 100px 100px 100px;
+    padding: 10px;
+    width: 60%;
+
+}
+
+.MainPageBody{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    font-weight: 300;
+    line-height: 1.7;
+    top: 102px;
+    background-color: #1F2029;
+}
+
+.MainPageBody p {
+    color:#9BABDE;
+}
+
+.Welcome{
+    display: flex;
+    background-color: #2C2E37;
+    grid-column: 1/14;
+    grid-row: 1/4;
+    border: 2px solid rgb(155, 171, 223);
+    border-radius: 10px;
+
+    
+}
+
+.WelcomeText{
+    position: relative;
+    max-width: 50%; 
+    max-height: 30%;
+    top:10%;
+    left: 20%;
+    
+}
+
+.RegisterNow{
+    display: flex;
+    position: relative;
+    background-color: #2C2E37;
+    border: 2px solid rgb(155, 171, 223);
+    padding: 10px;
+    overflow: hidden;
+    width: 30%;
+    height: 25%;
+    top: 70% ;
+    right: 49%;
+    border-radius: 12px;
+}
+.Welcome .Register-Now p{
+    max-width: 70%;
+    max-height:30%;
+    padding: 5px 5px 5px 5px;
+}
+
+.Welcome button{
+    width: 200px; /* Example width */
+    height: 50px; /* Example height */
+    border: 1px solid black;
+    overflow: hidden; /* Hide overflowed text */
+    text-overflow: ellipsis; /* Add ellipsis to overflowed text */
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+
+.imageOlacak{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    top:10%;
+    left: 170px;
+}
+
+.SearchBar{
+    grid-column: 4/14;
+    grid-row: 5/6;
+    padding:2.5%;
+    
+}
+.SortAndFilter{
+    border: 2px solid rgb(155, 171, 223);
+    border-radius: 10px;
+    background-color: #2C2E37;
+    color: #9BABDE;
+    grid-column: 1/4;
+    grid-row: 6/14;
+    height: 60%;
+    padding: 20px;
+    
+}
+.SortContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 70%;
+}
+
+
+.radio-group{
+    display: flex;
+    flex-direction: column;
+}
+
+.UniversitiesContainer{
+    background-color: #2C2E37;
+    grid-column: 4/14;
+    grid-row: 6/14;
+    display: grid;
+    grid-template-columns:  40% 40% ;
+    grid-template-rows: 25% 25% 25%;
+    justify-content: center;
+    column-gap: 10%;
+    row-gap: 10%;
+    padding-top: 20px;
+    border: 2px solid rgb(155, 171, 223);
+    border-radius: 10px;
+}
+.u1{
+    background-color: purple;
+
+}
+
+.u5{
+    background-color: pink;
+
+}
+
+.SearchBar {
+    grid-column: 4 / 14;
+    grid-row: 5 / 6;
+    padding: 2.5%;
+    
+}
+
+.SearchBar form {
+    display: flex;
+    align-items: center; /* Align items vertically */
+}
+
+.BarField {
+    flex: 1; /* Take up remaining space */
+    padding: 8px; /* Add padding for better appearance */
+    border: 1px solid #ccc; /* Add a border for clarity */
+    border-radius: 4px; /* Add border radius for rounded corners */
+}
+
+.searchbtn {
+    margin-left: 8px; /* Add some spacing between the input field and the button */
+    padding: 8px; /* Add padding for better appearance */
+    background-color: #9BABDE; /* Set button background color */
+    color: #fff; /* Set button text color */
+    border: none; /* Remove button border */
+    border-radius: 4px; /* Add border radius for rounded corners */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    width:100px;
+}
+

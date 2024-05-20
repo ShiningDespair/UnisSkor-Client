@@ -122,7 +122,7 @@ function RegistirationPage() {
                                                                 <Field type="password" className="form-style" name="stu_pw" placeholder="Şifre" />
                                                                 <i className="input-icon uil uil-lock-alt"></i>
                                                             </div>
-                                                            <button type="submit" className="btn mt-4">Login</button>
+                                                            <button type="submit" className="btn mt-4">Giriş Yap</button>
                                                             <br /><br />
                                                             {loginError && <div className="error">{loginError}</div>}
                                                             <div className="error">
@@ -172,7 +172,7 @@ function RegistirationPage() {
                                                                     <Field type="checkbox" name="promotionalCommunications" />
                                                                     Promosyon Amaçlı İletişimleri Kabul Ediyor Musunuz?
                                                                 </label>
-                                                                <button type="submit" className="btn mt-4">Register</button>
+                                                                <button type="submit" className="btn mt-4">Kayıt Ol</button>
                                                                 <br /><br /><br />
                                                                 <div className="error">
                                                                     <ErrorMessage name="stu_name" component="span" />

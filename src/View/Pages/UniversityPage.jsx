@@ -105,7 +105,7 @@ for (let i = stars.length; i < 5; i++) {
         <div className={UniPCSS.UniPageBody}>
             <div className={UniPCSS.UniDetailsContainer}>
                 <h1 className={UniPCSS.UniTitle}> {university.uni_name} </h1>
-                <p className={UniPCSS.Description}>{university.uni_name}</p>
+                <p className={UniPCSS.Description}></p>
                 {/*properties*/}
                 <div><p>Email: {university.uni_email} </p></div>
                 <div><p>Telefon Numarası: </p></div>

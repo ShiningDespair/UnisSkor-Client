@@ -34,7 +34,7 @@ function App() {
                 <MainPage />
               </Route>
               <Route path='/Registiration'>
-                <RegistirationPage />
+              <VerificationPage />
               </Route>
               <Route path='/UniversityPage/:id'>
                 <UniversityPage />

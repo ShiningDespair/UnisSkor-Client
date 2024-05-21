@@ -33,17 +33,17 @@ function App() {
               <Route exact path='/'>
                 <MainPage />
               </Route>
+              <Route path='/Verify'>
+                <VerificationPage />
+              </Route>
               <Route path='/Registiration'>
-              <VerificationPage />
+                <RegistirationPage />
               </Route>
               <Route path='/UniversityPage/:id'>
                 <UniversityPage />
               </Route>
               <Route path='/AccountPage'>
                 <AccountPage />
-              </Route>
-              <Route path='/verify'>
-                <VerificationPage />
               </Route>
               <Route>
                 <PageNotFound/>

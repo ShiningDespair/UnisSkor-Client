@@ -168,10 +168,6 @@ function RegistirationPage() {
                                                                     <Field type="password" className="form-style" name="stu_pw" placeholder="Şifre" />
                                                                     <i className="input-icon uil uil-lock-alt"></i>
                                                                 </div>
-                                                                <label>
-                                                                    <Field type="checkbox" name="promotionalCommunications" />
-                                                                    Promosyon Amaçlı İletişimleri Kabul Ediyor Musunuz?
-                                                                </label>
                                                                 <button type="submit" className="btn mt-4">Kayıt Ol</button>
                                                                 <br /><br /><br />
                                                                 <div className="error">

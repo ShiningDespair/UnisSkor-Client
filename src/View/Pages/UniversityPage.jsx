@@ -1,10 +1,9 @@
 import UniPCSS from './UniversityPage.module.css'
 import Rate from '../Components/Rate';
 import { useParams } from 'react-router-dom';
-import { useEffect, useState, useContext } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 import SingleRate from '../Components/SingleRate';
-import { AuthContext } from '../../Helpers/AuthContext';  
 
 //LEAK VAR ACİL ÇÖZÜLMESİ LAZIM SERVER CMD DURMYUOR DURMYUOR
 function UniversityPage() {
@@ -19,7 +18,6 @@ function UniversityPage() {
     const [rateList, setRates] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [rating, setRating] = useState(0); // State to store the rating
-    const { authState, setAuthState } = useContext(AuthContext);
 
     const PAGE_SIZE = 6; // Number of items per page
 
@@ -113,7 +111,7 @@ for (let i = stars.length; i < 5; i++) {
                 <div><p>Telefon Numarası: </p></div>
                 <div><p>Şehir: {university.uni_province} </p></div>
                 <div><p>Rektör: {university.uni_rector_name + " " + university.uni_rector_surname}</p></div>
-                <div><p>Sıralama: TO BE ADDED </p></div>
+                <div><p>Sıralama:  {university.uni_rank} </p></div>
                 <div>{stars}</div>
             </div>
 

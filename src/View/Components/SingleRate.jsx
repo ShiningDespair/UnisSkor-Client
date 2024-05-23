@@ -21,7 +21,7 @@ function SingleRate (props){
                     console.error("Error fetching student name:", error);
                 });
 
-            axios.get(`http://localhost:3001/Likes/${rate.com_id}`)
+            axios.get(`https://uniskor-api-acb533d7fd97.herokuapp.com/Likes/${rate.com_id}`)
             .then(response => {
                 setLikeCount(response.data.sum)
                 setStarCount(rate.rate_amount);
@@ -32,7 +32,7 @@ function SingleRate (props){
     }, [likeCount]);
 
         const handleLike = () => {
-            axios.post(`http://localhost:3001/Likes/like/${rate.com_id}`,null, {
+            axios.post(`https://uniskor-api-acb533d7fd97.herokuapp.com/Likes/like/${rate.com_id}`,null, {
                 headers: {
                     accessToken: localStorage.getItem("accessToken")
                 }
@@ -47,7 +47,7 @@ function SingleRate (props){
         };
 
         const handleDislike = () => {
-            axios.post(`http://localhost:3001/Likes/dislike/${rate.com_id}`,null, {
+            axios.post(`https://uniskor-api-acb533d7fd97.herokuapp.com/Likes/dislike/${rate.com_id}`,null, {
                 headers: {
                     accessToken: localStorage.getItem("accessToken")
                 }

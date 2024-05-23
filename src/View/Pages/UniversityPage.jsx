@@ -23,7 +23,7 @@ function UniversityPage() {
 
     const addRate = (event) => {
         event.preventDefault();
-        axios.post("http://localhost:3001/rates", {
+        axios.post("https://uniskor-api-acb533d7fd97.herokuapp.com/rates", {
             rate_amount: rating,
             com: rateComment,
             uni_id: id,

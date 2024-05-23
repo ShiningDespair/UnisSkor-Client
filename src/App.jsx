@@ -33,9 +33,6 @@ function App() {
               <Route exact path='/'>
                 <MainPage />
               </Route>
-              <Route path='/Verify'>
-                <VerificationPage />
-              </Route>
               <Route path='/Registiration'>
                 <RegistirationPage />
               </Route>
@@ -44,6 +41,9 @@ function App() {
               </Route>
               <Route path='/AccountPage'>
                 <AccountPage />
+              </Route>
+              <Route path='/Verify'>
+                <VerificationPage />
               </Route>
               <Route>
                 <PageNotFound/>

@@ -11,7 +11,7 @@ function RegistirationPage() {
     const [universities, setUniversities] = useState([]);
     const [loginError, setLoginError] = useState('');
     const [loading, setLoading] = useState(false);
-    const [registered, setRegistered] = useState(false);
+    const [registered] = useState(false);
     const [verificationSent, setVerificationSent] = useState(false);
     const history = useHistory();
     const { setAuthState } = useContext(AuthContext);

@@ -6,6 +6,7 @@
     align-items: center;
     font-family: 'Poppins', sans-serif;
     width: 100%;
+    height: calc(100vh - 160px);
     font-weight: 300;
     line-height: 1.7;
     color: #9BABDE;

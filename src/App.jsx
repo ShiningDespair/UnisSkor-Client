@@ -10,7 +10,7 @@ import VerificationPage from './View/Pages/VerificationPage';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { AuthContext } from './Helpers/AuthContext';
 import { useState, useEffect } from 'react';
-import jwt_decode from 'jwt-decode';
+import { jwtDecode } from 'jwt-decode'; // Burada doğru şekilde import ediyoruz
 
 function App() {
   const [authState, setAuthState] = useState({id:0,status:false});
@@ -19,7 +19,7 @@ function App() {
   useEffect(() => {
     const token = localStorage.getItem("accessToken");
     if (token) {
-      const decodedToken = jwt_decode(token);
+      const decodedToken = jwtDecode(token);
       const currentTime = Date.now() / 1000; // Unix zamanı saniye cinsinden
 
       if (decodedToken.exp < currentTime) {

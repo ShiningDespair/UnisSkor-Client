@@ -5,7 +5,7 @@ import AccCSS from './AccountPage.module.css';
 import axios from 'axios';
 
 function AccountPage() {
-    const { authState, setAuthState } = useContext(AuthContext);
+    const {setAuthState } = useContext(AuthContext);
     const history = useHistory();
     const [loading, setLoading] = useState(false);  // Loading state
     const [student, setStudent] = useState(null);

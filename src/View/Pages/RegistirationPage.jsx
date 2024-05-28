@@ -10,8 +10,9 @@ import { AuthContext } from '../../Helpers/AuthContext';
 function RegistirationPage() {
     const [universities, setUniversities] = useState([]);
     const [loginError, setLoginError] = useState('');
+    const [registerError, setRegisterError] = useState('');
     const [loading, setLoading] = useState(false);
-    const [registered] = useState(false);
+    const [registered, setRegistered] = useState(false);
     const [verificationSent, setVerificationSent] = useState(false);
     const history = useHistory();
     const { setAuthState } = useContext(AuthContext);
@@ -43,7 +44,10 @@ function RegistirationPage() {
                 }, 5000);
             })
             .catch(error => {
-                alert(error.response.data.error);
+                setRegisterError(error.response.data.error);
+                setTimeout(() => {
+                    setRegisterError('');
+                }, 5000);
             });
     };
 
@@ -64,6 +68,9 @@ function RegistirationPage() {
             })
             .catch(error => {
                 setLoginError("Invalid email or password");
+                setTimeout(() => {
+                    setLoginError('');
+                }, 5000);
             });
     };
 
@@ -112,24 +119,23 @@ function RegistirationPage() {
                                                 <div className="section text-center">
                                                     <h4 className="pb-3">Giriş Yap</h4>
                                                     <Formik initialValues={loginInitialValues} onSubmit={handleClickLogIn} validationSchema={loginValidationSchema}>
-                                                        <Form>
-                                                            <div className="form-group">
-                                                                <Field className="form-style" name="stu_mail" placeholder="Okul Maili" />
-                                                                <i className="input-icon uil uil-at"></i>
-                                                            </div>
-                                                            <div className="form-group mt-2">
-                                                                <Field type="password" className="form-style" name="stu_pw" placeholder="Şifre" />
-                                                                <i className="input-icon uil uil-lock-alt"></i>
-                                                            </div>
-                                                            <button type="submit" className="btn mt-4">Giriş Yap</button>
-                                                            <br /><br />
-                                                            {loginError && <div className="error">{loginError}</div>}
-                                                            <div className="error">
-                                                                <ErrorMessage name="stu_mail" component="span" />
-                                                                <br />
-                                                                <ErrorMessage name="stu_pw" component="span" />
-                                                            </div>
-                                                        </Form>
+                                                        {({ errors, touched }) => (
+                                                            <Form>
+                                                                <div className="form-group">
+                                                                    <Field className="form-style" name="stu_mail" placeholder="Okul Maili" />
+                                                                    <i className="input-icon uil uil-at"></i>
+                                                                    {errors.stu_mail && touched.stu_mail && <div className="alert">{errors.stu_mail}</div>}
+                                                                </div>
+                                                                <div className="form-group mt-2">
+                                                                    <Field type="password" className="form-style" name="stu_pw" placeholder="Şifre" />
+                                                                    <i className="input-icon uil uil-lock-alt"></i>
+                                                                    {errors.stu_pw && touched.stu_pw && <div className="alert">{errors.stu_pw}</div>}
+                                                                </div>
+                                                                <button type="submit" className="btn mt-4">Giriş Yap</button>
+                                                                <br /><br />
+                                                                {loginError && <div className="alert">{loginError}</div>}
+                                                            </Form>
+                                                        )}
                                                     </Formik>
                                                 </div>
                                             </div>
@@ -139,20 +145,24 @@ function RegistirationPage() {
                                                 <div className="section text-center">
                                                     <h4 className="mb-3 pb-3">Kayıt Ol</h4>
                                                     <Formik initialValues={registerInitialValues} onSubmit={handleClickRegister} validationSchema={registerValidationSchema}>
-                                                        {({ setFieldValue, setFieldTouched }) => (
+                                                        {({ setFieldValue, setFieldTouched, errors, touched }) => (
                                                             <Form className="form-group">
                                                                 <div className="form-group">
                                                                     <Field className="form-style" name="stu_name" placeholder="İsim" />
                                                                     <i className="input-icon uil uil-user"></i>
+                                                                    {errors.stu_name && touched.stu_name && <div className="alert">{errors.stu_name}</div>}
                                                                     <Field className="form-style" name="stu_surname" placeholder="Soyisim" />
+                                                                    {errors.stu_surname && touched.stu_surname && <div className="alert">{errors.stu_surname}</div>}
                                                                 </div>
                                                                 <div className="form-group mt-2">
                                                                     <Field className="form-style" name="stu_phone" placeholder="Telefon Numarası" />
                                                                     <i className="input-icon uil uil-phone"></i>
+                                                                    {errors.stu_phone && touched.stu_phone && <div className="alert">{errors.stu_phone}</div>}
                                                                 </div>
                                                                 <div className="form-group mt-2">
                                                                     <Field className="form-style" name="stu_mail" placeholder="Okul Maili" />
                                                                     <i className="input-icon uil uil-at"></i>
+                                                                    {errors.stu_mail && touched.stu_mail && <div className="alert">{errors.stu_mail}</div>}
                                                                 </div>
                                                                 <div className="form-group mt-2">
                                                                     <Select
@@ -162,24 +172,16 @@ function RegistirationPage() {
                                                                         onChange={(value) => setFieldValue('selectedUniversity', value)}
                                                                         onBlur={() => setFieldTouched('selectedUniversity', true)}
                                                                     />
+                                                                    {errors.selectedUniversity && touched.selectedUniversity && <div className="alert">{errors.selectedUniversity}</div>}
                                                                 </div>
                                                                 <div className="form-group mt-2">
                                                                     <Field type="password" className="form-style" name="stu_pw" placeholder="Şifre" />
                                                                     <i className="input-icon uil uil-lock-alt"></i>
+                                                                    {errors.stu_pw && touched.stu_pw && <div className="alert">{errors.stu_pw}</div>}
                                                                 </div>
                                                                 <button type="submit" className="btn mt-4">Kayıt Ol</button>
                                                                 <br /><br /><br />
-                                                                <div className="error">
-                                                                    <ErrorMessage name="stu_name" component="span" />
-                                                                    <br />
-                                                                    <ErrorMessage name="stu_surname" component="span" />
-                                                                    <br />
-                                                                    <ErrorMessage name="stu_mail" component="span" />
-                                                                    <br />
-                                                                    <ErrorMessage name="stu_phone" component="span" />
-                                                                    <br />
-                                                                    <ErrorMessage name="selectedUniversity" component="span" />
-                                                                </div>
+                                                                {registerError && <div className="alert">{registerError}</div>}
                                                             </Form>
                                                         )}
                                                     </Formik>
